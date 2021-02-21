@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { VoteCandidate } from 'src/app/models/vote-candidate';
 
 @Component({
   selector: 'app-confirmation',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmationComponent implements OnInit {
 
+  @Input() candidate: VoteCandidate;
+  @Output() response = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit(): void {
+  }
+  yesClick(): void {
+    this.response.emit(true);
+  }
+
+  noClick(): void {
+    this.response.emit(false);
   }
 
 }
