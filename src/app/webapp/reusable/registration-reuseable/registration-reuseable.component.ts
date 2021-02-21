@@ -36,7 +36,6 @@ export class RegistrationReuseableComponent implements OnInit {
 
     this.registrationService.getRegistrations().subscribe(result => {
       this.registrationList = result;
-      
     });
 
   }

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DefaultComponent } from 'src/app/webapp/default/default.component'
 import { PageNotFoundComponent } from 'src/app/webapp/page-not-found/page-not-found.component';
 import { RegistrationComponent } from 'src/app/webapp/admin/registration/registration.component';
+import { CandidatesComponent } from './webapp/admin/candidates/candidates.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,13 @@ const routes: Routes = [
   {
     path: 'admin/registration',
     component: RegistrationComponent,
+    data: {
+
+    }
+  },
+  {
+    path: 'admin/candidate',
+    component: CandidatesComponent,
     data: {
 
     }

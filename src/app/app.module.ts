@@ -14,6 +14,8 @@ import { SelectCandidatesComponent } from './webapp/reusable/select-candidates/s
 import { ConfirmationComponent } from './webapp/reusable/confirmation/confirmation.component';
 import { RegistrationComponent } from './webapp/admin/registration/registration.component';
 import { RegistrationReuseableComponent } from './webapp/reusable/registration-reuseable/registration-reuseable.component';
+import { CandidatesReuseableComponent } from './webapp/reusable/candidates-reuseable/candidates-reuseable.component';
+import { CandidatesComponent } from './webapp/admin/candidates/candidates.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { RegistrationReuseableComponent } from './webapp/reusable/registration-r
     SelectCandidatesComponent,
     ConfirmationComponent,
     RegistrationComponent,
-    RegistrationReuseableComponent
+    RegistrationReuseableComponent,
+    CandidatesReuseableComponent,
+    CandidatesComponent
   ],
   imports: [
     BrowserModule,
