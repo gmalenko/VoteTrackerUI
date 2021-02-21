@@ -12,6 +12,8 @@ import { ToastrModule } from 'ng6-toastr-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectCandidatesComponent } from './webapp/reusable/select-candidates/select-candidates.component';
 import { ConfirmationComponent } from './webapp/reusable/confirmation/confirmation.component';
+import { RegistrationComponent } from './webapp/admin/registration/registration.component';
+import { RegistrationReuseableComponent } from './webapp/reusable/registration-reuseable/registration-reuseable.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ConfirmationComponent } from './webapp/reusable/confirmation/confirmati
     PageNotFoundComponent,
     SelfRegistrationComponent,
     SelectCandidatesComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    RegistrationComponent,
+    RegistrationReuseableComponent
   ],
   imports: [
     BrowserModule,

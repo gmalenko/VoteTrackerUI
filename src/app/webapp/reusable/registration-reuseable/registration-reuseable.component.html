@@ -1,0 +1,17 @@
+<h2>Please fill out the form in order to continue.</h2>
+<div class="row">
+  <div class="col-sm-2">First Name</div>
+  <div class="col-sm-1"><input type='text' [(ngModel)]="firstName" /></div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-2">Last Name</div>
+  <div class="col-sm-1"><input type='text' [(ngModel)]="lastName" /></div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-2">Not Eligible</div>
+  <div class="col-sm-1"><input type='checkbox' [(ngModel)]="isEligible" /></div>
+</div>
+<br />
+<button type="button" class="btn btn-primary" (click)='submitClicked()' [disabled]='loading'>Submit</button>

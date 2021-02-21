@@ -6,6 +6,7 @@ export class SelfRegistration {
     public lastname: string;
     public votePeriod: string;
     public email: string;
+    public isElgible: boolean;
 }
 
 export class SelfRegistrationResponse {
