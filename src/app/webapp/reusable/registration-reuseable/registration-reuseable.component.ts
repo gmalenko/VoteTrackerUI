@@ -36,6 +36,7 @@ export class RegistrationReuseableComponent implements OnInit {
 
     this.registrationService.getRegistrations().subscribe(result => {
       this.registrationList = result;
+      
     });
 
   }
@@ -61,6 +62,7 @@ export class RegistrationReuseableComponent implements OnInit {
               selfRegistrationResponse.response = true;
               selfRegistrationResponse.selfRegistration = registrationResult;
               selfRegistrationResponse.votePeriod = result;
+              this.registrationList.push(registrationResult);
               this.firstName = '';
               this.lastName = '';
               this.isEligible = false;
@@ -78,6 +80,7 @@ export class RegistrationReuseableComponent implements OnInit {
             selfRegistrationResponse.response = true;
             selfRegistrationResponse.selfRegistration = registrationResult;
             selfRegistrationResponse.votePeriod = result;
+            this.registrationList.push(registrationResult);
             this.firstName = '';
             this.lastName = '';
             this.isEligible = false;

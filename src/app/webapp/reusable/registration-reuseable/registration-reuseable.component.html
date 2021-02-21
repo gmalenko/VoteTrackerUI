@@ -15,3 +15,36 @@
 </div>
 <br />
 <button type="button" class="btn btn-primary" (click)='submitClicked()' [disabled]='loading'>Submit</button>
+
+<br /><br>
+
+<div class="row">
+    <div class="col">
+      <b>Id</b>
+    </div>
+    <div class="col">
+      <b>FirstName</b>
+    </div>
+    <div class="col">
+      <b>Lastname</b>
+    </div>
+    <div class="col">
+      <b>Is not eligible</b>
+    </div>
+  </div>
+<div *ngFor="let person of registrationList">
+  <div class="row" style="padding: 10px 10px;">
+    <div class="col">
+      {{person.id}}
+    </div>
+    <div class="col">
+      {{person.firstname}}
+    </div>
+    <div class="col">
+      {{person.lastname}}
+    </div>
+    <div class="col">
+      {{person.isElgible}} 
+    </div>
+  </div>
+</div>
