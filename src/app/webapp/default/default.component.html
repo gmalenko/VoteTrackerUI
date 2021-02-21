@@ -1,7 +1,12 @@
-<p>default works!</p>
+<!-- <p>default works!</p> -->
 <div *ngIf="!isRegistrationComplete; elseBlock">
   <app-self-registration (completed)="registrationCompleted($event)"></app-self-registration>
 </div>
 <div *ngIf="isRegistrationComplete && !isCandidateSelected;">
-  <app-select-candidates [selfRegistration] = "selfRegistration" [votePeriod] ="votePeriod"></app-select-candidates>
+  <app-select-candidates [selfRegistration]="selfRegistration" [votePeriod]="votePeriod"
+    (completed)="candidatedSelected($event)"></app-select-candidates>
+</div>
+
+<div *ngIf="isRegistrationComplete && isCandidateSelected && processCompleted;">
+  Your vote has been sumitted. Thank you!
 </div>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VoteCandidate } from 'src/app/models/vote-candidate';
 
 @Component({
@@ -10,7 +11,7 @@ export class ConfirmationComponent implements OnInit {
 
   @Input() candidate: VoteCandidate;
   @Output() response = new EventEmitter<boolean>();
-  constructor() { }
+  constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,10 @@ export class ConfirmationComponent implements OnInit {
 
   noClick(): void {
     this.response.emit(false);
+  }
+
+  closeClick(): void {
+    this.activeModal.dismiss();
   }
 
 }

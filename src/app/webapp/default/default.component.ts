@@ -13,11 +13,13 @@ export class DefaultComponent implements OnInit {
   isCandidateSelected: boolean;
   selfRegistration: SelfRegistration;
   votePeriod: VotePeriod;
+  processCompleted: boolean;
   constructor() { }
 
   ngOnInit(): void {
     this.isRegistrationComplete = false;
     this.isCandidateSelected = false;
+    this.processCompleted = false;
   }
 
   registrationCompleted(input: SelfRegistrationResponse): void {
@@ -25,6 +27,12 @@ export class DefaultComponent implements OnInit {
       this.isRegistrationComplete = true;
       this.selfRegistration = input.selfRegistration;
       this.votePeriod = input.votePeriod;
+    }
+  }
+  candidatedSelected(input: boolean): void {
+    if (input) {
+      this.processCompleted = true;
+      this.isCandidateSelected = true;
     }
   }
 
