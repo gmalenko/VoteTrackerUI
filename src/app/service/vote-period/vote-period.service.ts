@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { VotePeriod } from 'src/app/models/VotePeriod';
+import { VotePeriod } from 'src/app/models/vote-period';
 import { HttpService } from '../http/http.service';
 
 
