@@ -1,4 +1,4 @@
-<p>Please select a Candidate you wish to vote for</p>
+<h2>Please select a candidate for whom you wish to vote.</h2>
 <div *ngFor="let candidate of candidateList" class="form-check">    
   <label for="{{candidate.id}}" class="form-check-label" style="padding-top: 25px;">
     <input id="{{candidate.id}}" class="form-check-input" [value]='candidate.id' type="radio" name="candidates" [(ngModel)]="radioSelected">{{candidate.firstname}} {{candidate.lastname}}
