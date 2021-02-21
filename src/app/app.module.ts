@@ -16,6 +16,7 @@ import { RegistrationComponent } from './webapp/admin/registration/registration.
 import { RegistrationReuseableComponent } from './webapp/reusable/registration-reuseable/registration-reuseable.component';
 import { CandidatesReuseableComponent } from './webapp/reusable/candidates-reuseable/candidates-reuseable.component';
 import { CandidatesComponent } from './webapp/admin/candidates/candidates.component';
+import { VoteTotal2021Component } from './webapp/admin/vote-total2021/vote-total2021.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CandidatesComponent } from './webapp/admin/candidates/candidates.compon
     RegistrationComponent,
     RegistrationReuseableComponent,
     CandidatesReuseableComponent,
-    CandidatesComponent
+    CandidatesComponent,
+    VoteTotal2021Component
   ],
   imports: [
     BrowserModule,

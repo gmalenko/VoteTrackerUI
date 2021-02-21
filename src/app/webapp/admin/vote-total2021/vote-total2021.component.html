@@ -1,0 +1,21 @@
+<h2>Voting Totals of 2021</h2>
+
+<div class="row">
+  <div class="col">
+    <b>Name</b>
+  </div>
+  <div class="col">
+    <b>Total Number Of Votes</b>
+  </div>
+</div>
+<div *ngFor="let candidate of voterSummary">
+  <div class="row" style="padding: 10px 10px;">
+    <div class="col">
+      {{candidate.voteCandidate.firstname}} {{candidate.voteCandidate.lastname}}
+    </div>
+    <div class="col">
+      {{candidate.totals}}
+    </div>
+
+  </div>
+</div>
