@@ -32,31 +32,31 @@ export class SelfRegistrationComponent implements OnInit {
       this.toasterService.Error('First Name is required');
     } else if (!this.lastName || this.firstName.trim() === '') {
       this.toasterService.Error('Last Name is required');
-    }
+    } else {
 
-    const selfRegistration = new SelfRegistration();
-    selfRegistration.firstname = this.firstName;
-    selfRegistration.lastname = this.lastName;
-    selfRegistration.email = this.emailAddress;
+      const selfRegistration = new SelfRegistration();
+      selfRegistration.firstname = this.firstName;
+      selfRegistration.lastname = this.lastName;
+      selfRegistration.email = this.emailAddress;
 
-    this.votePeriodService.getVotePeriod().subscribe(result => {
-      this.loading = true;
-      selfRegistration.votePeriod = result.id;
-      this.selfRegistrationService.submitSelfRegistration(selfRegistration).subscribe(registrationResult => {
-        if (registrationResult.id) {
-          const selfRegistrationResponse = new SelfRegistrationResponse();
-          selfRegistrationResponse.response = true;
-          selfRegistrationResponse.selfRegistration = registrationResult;
-          selfRegistrationResponse.votePeriod = result;
-          this.completed.emit(selfRegistrationResponse);
-        }
-      }, error => {
-        this.toasterService.Error('There was an erorr. Please try again');
-        this.loading = false;
+      this.votePeriodService.getVotePeriod().subscribe(result => {
+        this.loading = true;
+        selfRegistration.votePeriod = result.id;
+        this.selfRegistrationService.submitSelfRegistration(selfRegistration).subscribe(registrationResult => {
+          if (registrationResult.id) {
+            const selfRegistrationResponse = new SelfRegistrationResponse();
+            selfRegistrationResponse.response = true;
+            selfRegistrationResponse.selfRegistration = registrationResult;
+            selfRegistrationResponse.votePeriod = result;
+            this.completed.emit(selfRegistrationResponse);
+          }
+        }, error => {
+          this.toasterService.Error('There was an erorr. Please try again');
+          this.loading = false;
+        });
+
       });
-
-    });
-
+    }
 
   }
 }
