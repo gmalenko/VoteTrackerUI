@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { SelfRegistration } from 'src/app/models/self-registration';
+import { SelfRegistration, SelfRegistrationResponse } from 'src/app/models/self-registration';
 import { SelfRegistrationService } from 'src/app/service/self-registration/self-registration.service';
 import { ToasterService } from 'src/app/service/toaster/toaster.service';
 import { VotePeriodService } from 'src/app/service/vote-period/vote-period.service';
@@ -15,17 +15,16 @@ export class SelfRegistrationComponent implements OnInit {
   emailAddress: string;
   loading: boolean;
 
-  @Output() completed = new EventEmitter<boolean>();
+  @Output() completed = new EventEmitter<SelfRegistrationResponse>();
 
 
 
   constructor(private selfRegistrationService: SelfRegistrationService,
-              private votePeriodService: VotePeriodService,
-              private toasterService: ToasterService) { }
+    private votePeriodService: VotePeriodService,
+    private toasterService: ToasterService) { }
 
   ngOnInit(): void {
     this.loading = false;
-    console.log(this.loading)
   }
 
   submitClicked(): void {
@@ -44,9 +43,12 @@ export class SelfRegistrationComponent implements OnInit {
       this.loading = true;
       selfRegistration.votePeriod = result.id;
       this.selfRegistrationService.submitSelfRegistration(selfRegistration).subscribe(registrationResult => {
-        console.log(registrationResult);
         if (registrationResult.id) {
-          this.completed.emit(true);
+          const selfRegistrationResponse = new SelfRegistrationResponse();
+          selfRegistrationResponse.response = true;
+          selfRegistrationResponse.selfRegistration = registrationResult;
+          selfRegistrationResponse.votePeriod = result;
+          this.completed.emit(selfRegistrationResponse);
         }
       }, error => {
         this.toasterService.Error('There was an erorr. Please try again');

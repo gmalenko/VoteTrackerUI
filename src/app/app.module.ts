@@ -10,13 +10,17 @@ import { SelfRegistrationComponent } from './webapp/reusable/self-registration/s
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ng6-toastr-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SelectCandidatesComponent } from './webapp/reusable/select-candidates/select-candidates.component';
+import { ConfirmationComponent } from './webapp/reusable/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DefaultComponent,
     PageNotFoundComponent,
-    SelfRegistrationComponent
+    SelfRegistrationComponent,
+    SelectCandidatesComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,8 @@
+<p>Please select a Candidate you wish to vote for</p>
+<div *ngFor="let candidate of candidateList" class="form-check">    
+  <label for="{{candidate.id}}" class="form-check-label" style="padding-top: 25px;">
+    <input id="{{candidate.id}}" class="form-check-input" [value]='candidate.id' type="radio" name="candidates" [(ngModel)]="radioSelected">{{candidate.firstname}} {{candidate.lastname}}
+  </label>  
+</div>
+<br>
+<button type="button" class="btn btn-primary" (click)='submitClick()' [disabled]='!submitEndabled'>Submit</button>
