@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://vote-api.trueandholyway.org/api/',
+  apiUrl: 'https://localhost:44342/api/',
 };
 
 /*
